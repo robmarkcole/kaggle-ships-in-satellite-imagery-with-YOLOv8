@@ -8,4 +8,12 @@ The dataset used is the kaggle [Ships in Google Earth](https://www.kaggle.com/to
 <img src="https://github.com/robmarkcole/kaggle-ships-in-Google-Earth-yolov5/blob/main/images/kaggle.png" width="750">
 </p>
 
-For this project I wished to use [Yolov5](https://github.com/ultralytics/yolov5) to perform object detection, as this is a model that is easy to use and has good performance. Yolov5 requires images in a specific annotation format, so to transform the annotations from Pascal VOC to Yolov5 format I uploaded the dataset to [Roboflow](https://roboflow.com/), which provides a number of handy features including dataset insights and the abilioty to export datasets in the required Yolov5 format.
+For this project I wished to use [Yolov5](https://github.com/ultralytics/yolov5) to perform object detection, as this is a model that is easy to use and has good performance. Yolov5 requires images in a specific annotation format, so to transform the annotations from Pascal VOC to Yolov5 format I uploaded the dataset to [Roboflow](https://roboflow.com/), which provides a number of handy features including dataset insights, data pre and post processing (augmentations), and the abilioty to export datasets in the required Yolov5 format.
+
+<p align="center">
+<img src="https://github.com/robmarkcole/kaggle-ships-in-Google-Earth-yolov5/blob/main/images/dataset.png" width="550">
+</p>
+
+<p align="center">
+<img src="https://github.com/robmarkcole/kaggle-ships-in-Google-Earth-yolov5/blob/main/images/dataset_healthcheck.png" width="550">
+</p>
