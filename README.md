@@ -21,8 +21,19 @@ The dataset on kaggle consist of 794 images, and on uploading to Roboflow I reba
 </p>
 
 ## Training
-Roboflow provide ready to use training notebooks, and I used the YOLOv5 notebook as-is. The notebook is provided here in the file `training.ipynb` and the final trained model is in the `model` folder. The results of training for 100 epochs are below:
+Roboflow provide ready to use training notebooks, and I used the YOLOv5 notebook as-is. The notebook is provided here in the file `training.ipynb` and the final trained model is in the `model` folder. Training was performed on Google Colab Pro using a Tesla T4 with 16GB RAM and completed in approximately 21 mins. The results of training for 100 epochs are below:
 
 <p align="center">
-<img src="https://github.com/robmarkcole/kaggle-ships-in-Google-Earth-yolov5/blob/main/images/training.png" width="550">
+<img src="https://github.com/robmarkcole/kaggle-ships-in-Google-Earth-yolov5/blob/main/images/training.png" width="400">
+</p>
+
+- Precision: 0.852
+- Recall: 0.572
+- mAP@.5: 0.708
+- mAP@.5:.95: 0.442
+
+Whilst we have achieved a decent precision and mAP@.5, the recall is a little low. The notebook shows the inferences performed on the hold-out test set. We see that for boats in the open water the model does well.
+
+<p align="center">
+<img src="https://github.com/robmarkcole/kaggle-ships-in-Google-Earth-yolov5/blob/main/images/good_1.png" width="500">
 </p>
