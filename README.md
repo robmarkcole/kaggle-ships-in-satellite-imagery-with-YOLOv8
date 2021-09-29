@@ -20,6 +20,8 @@ The dataset on kaggle consist of 794 images, and on uploading to Roboflow I reba
 <img src="https://github.com/robmarkcole/kaggle-ships-in-Google-Earth-yolov5/blob/main/images/dataset_healthcheck.png" width="900">
 </p>
 
+Using [lightly.ai](https://www.lightly.ai/) we can visualise the data in feature space, here with embeddings generated using the default resnet18-simclr backbone. 
+
 ## Training
 Roboflow provide ready to use training notebooks, and I used the YOLOv5 notebook as-is. The notebook is provided here in the file `training.ipynb` and the final trained model is in the `model` folder. Training was performed on Google Colab Pro using a Tesla T4 with 16GB RAM and completed in approximately 21 mins. The results of training for 100 epochs are below:
 
