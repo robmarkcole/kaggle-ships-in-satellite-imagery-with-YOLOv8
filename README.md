@@ -20,7 +20,7 @@ The dataset on kaggle consist of 794 images, and on uploading to Roboflow I reba
 <img src="https://github.com/robmarkcole/kaggle-ships-in-Google-Earth-yolov5/blob/main/images/dataset_healthcheck.png" width="900">
 </p>
 
-Using [lightly.ai](https://www.lightly.ai/) we can visualise the data in feature space, here with embeddings generated using the default resnet18-simclr backbone. A cluster plot of the embeddings shows several discrete clusters, with a cluseter of boats by the shore highlighted.
+Using [lightly.ai](https://www.lightly.ai/) we can visualise the data in feature space, here with embeddings generated using the default resnet18-simclr backbone. A cluster plot of the embeddings shows several discrete clusters, with a cluseter of boats by the shore highlighted. There is also a medium sized cluster to the left of the plot which are container ships, whilst the largest cluser (right) are mainly smaller ships. This inspection reveals some class imbalances in the data, i.e. imbalance across size of boats, and whether at port or at sea.
 
 <p align="center">
 <img src="https://github.com/robmarkcole/kaggle-ships-in-Google-Earth-yolov5/blob/main/images/lightly.png" width="900">
