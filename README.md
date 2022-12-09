@@ -15,12 +15,6 @@ The dataset on kaggle consist of 794 images, with 694 in a training set and 100 
 <img src="images/dataset.png" width="700">
 </p>
 
-## Dataset visualisation
-Using [lightly.ai](https://www.lightly.ai/) we can visualise the image data in feature space, here with embeddings generated using the default `resnet18-simclr` backbone. A cluster plot of the embeddings shows several discrete clusters, with a cluseter of boats by the shore highlighted. There is also a medium sized cluster to the left of the plot which are container ships, whilst the largest cluser (right) are mainly smaller ships. This inspection reveals some class imbalances in the data, i.e. imbalance across size of boats, and whether at port or at sea.
-<p align="center">
-<img src="images/lightly.png" width="900">
-</p>
-
 ## Training
 Roboflow provide ready to use training notebooks, and I used the YOLOv5 notebook. The notebook is provided here in the file `yolov5-training.ipynb` and the final trained model is in the `model` folder. Training was performed on Google Colab Pro using a Tesla T4 and completed in approximately 21 mins. The results of training for 100 epochs are below:
 <p align="center">
