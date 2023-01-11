@@ -10,7 +10,7 @@ The dataset used is hosted on Kaggle at [Ships in Google Earth](https://www.kagg
 
 For this project I use [YOLOv8](https://github.com/ultralytics/ultralytics) to perform object detection, as this is a model that is easy to use and has state of the art performance. YOLOv8 requires images in a specific annotation format, so to transform the annotations from Pascal VOC to YOLOv8 format  I uploaded the dataset to [Roboflow](https://roboflow.com/) for reformatting. Roboflow provides a number of handy features including dataset insights & versioning, data pre and post processing (resizing & augmentations), and the ability to export datasets in the required format.
 
-The dataset on kaggle consist of 794 images, with 694 in a training set and 100 in test set. I uploading these to Roboflow and rebalanced the dataset into train/validation/test splits with 70%/20%/10% weighting (note these % change after augmenting the test images). I applied three augmentations to the training images which are appriate for aerial imager: a horizontal flip and 2x rotations. This increased the training set size threefold to approximately 1400 images. For pre-processing I resized all images to 640x640 since this is the expected size by the YOLOv8n/s models, which is the smallest and fasted of the YOLOv8 models.
+The dataset on kaggle consist of 794 images, with 694 in a training set and 100 in test set. I uploading these to Roboflow and rebalanced the dataset into train/validation/test splits with 70%/20%/10% weighting (note these % change after augmenting the test images). I applied three augmentations to the training images which are appriate for aerial imager: a horizontal flip and 2x rotations. This increased the training set size threefold to approximately 1400 images. For pre-processing I resized all images to 640x640 since this is the expected size by the YOLOv8m model.
 
 <p align="center">
 <img src="images/dataset.png" width="700">
@@ -23,23 +23,19 @@ Roboflow provide ready to use training notebooks, and I used the [YOLOv8 noteboo
 </p>
 
 ## Validation metrics
-First for the smallest yolov8n model:
-- Precision: 0.741
-- Recall: 0.524
-- mAP@.5: 0.599
-- mAP@.5:.95: 0.402
+Metrics for yolov8m model:
+- Precision: 0.923
+- Recall: 0.936
+- mAP@.5: 0.959
+- mAP@.5:.95: 0.729
 
-Second for the smallest yolov8s model:
-- Precision: 0.771
-- Recall: 0.615
-- mAP@.5: 0.674
-- mAP@.5:.95: 0.438
-
-Analysing the predictions on the validation set we observe some obvious errors but with low confidence. Overall the results are encouraging
+Analysing the predictions on the validation set we observe some errors particularly for small boats. Overall the results are encouraging
 
 <p align="center">
 <img src="images/val-preds.jpeg" width="700">
 </p>
+
+Reviewing the test predictions (see notebook), in general ships are accurately detected with high confidence but some small and very long ships are missed.
 
 ## Conclusions
 With relatively little time and effort I trained a lightweight YOLOv8 that provides useful performance for ships detection. Note also that YOLOv8n is the smallest available YOLOv8 model, and better metrics may be achieved with one of the larger models. Experimentation with alternative augmentation strategies could be explored to help balance out some of the variations due to sea conditions (rough or calm), lighting (overcast or bright sunshine), ship density.
