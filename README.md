@@ -26,11 +26,11 @@ Roboflow provide ready to use training notebooks, and I used the [YOLOv8 noteboo
 ## Validation metrics
 
 | Metric      | yolov8n | yolov8m   |
-| :----:      |  :----: |    :----: |
-| Precision   | tbc     | 0.923     |
-| Recall      | tbc     | 0.936     |
-| mAP@.5      | tbc     | 0.950     |
-| mAP@.5:.95  | tbc     | 0.729     |
+| :----:      |  :----: | :----:    |
+| Precision   | tbc     | 0.943     |
+| Recall      | tbc     | 0.927     |
+| mAP@.5      | tbc     | 0.957     |
+| mAP@.5:.95  | tbc     | 0.720     |
 
 
 Reviewing the predictions on the validation set I observed some errors, particularly for small boats. Overall the results are very encouraging:
