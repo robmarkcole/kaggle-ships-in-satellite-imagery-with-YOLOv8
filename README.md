@@ -17,7 +17,7 @@ YOLOv8 requires images in a specific annotation format. To transform the annotat
 </p>
 
 ## Training YOLOv8
-Roboflow provide ready to use training notebooks, and I used the [YOLOv8 notebook](https://github.com/roboflow/notebooks/blob/main/notebooks/train-yolov8-object-detection-on-custom-dataset.ipynb). The notebook is provided here in the file `yolov8-kaggle-ships.ipynb`. Training was performed on Google Colab Pro using a Tesla T4. The results of training for 100 epochs are below (yolov8m model):
+Roboflow provide ready to use training notebooks, and I used the [YOLOv8 notebook](https://github.com/roboflow/notebooks/blob/main/notebooks/train-yolov8-object-detection-on-custom-dataset.ipynb). The notebook is provided here in the file `yolov8-kaggle-ships.ipynb`. Training was performed on Google Colab Pro using a Tesla T4. The results of training for 100 epochs are below (yolov8n model):
 
 <p align="center">
 <img src="images/training.png" width="700">
@@ -27,10 +27,10 @@ Roboflow provide ready to use training notebooks, and I used the [YOLOv8 noteboo
 
 | Metric      | yolov8n | yolov8m   |
 | :----:      |  :----: | :----:    |
-| Precision   | tbc     | 0.943     |
-| Recall      | tbc     | 0.927     |
-| mAP@.5      | tbc     | 0.957     |
-| mAP@.5:.95  | tbc     | 0.720     |
+| Precision   | 0.919   | 0.943     |
+| Recall      | 0.863   | 0.927     |
+| mAP@.5      | 0.941   | 0.957     |
+| mAP@.5:.95  | 0.683   | 0.720     |
 
 
 Reviewing the predictions on the validation set I observed some errors, particularly for small boats. Overall the results are very encouraging:
