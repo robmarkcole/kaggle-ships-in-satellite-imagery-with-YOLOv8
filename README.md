@@ -24,7 +24,7 @@ Roboflow provide ready to use training notebooks, and I used the [YOLOv8 noteboo
 </p>
 
 ## Validation metrics
-
+Metrics for the best models, which are in the `models` folder:
 | Metric      | yolov8n | yolov8m   |
 | :----:      |  :----: | :----:    |
 | Precision   | 0.919   | 0.943     |
