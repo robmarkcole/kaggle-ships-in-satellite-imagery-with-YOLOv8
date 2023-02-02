@@ -8,7 +8,6 @@ The source dataset used is on Kaggle at [Ships in Google Earth](https://www.kagg
 <img src="images/kaggle.png" width="900">
 </p>
 
-
 ## Annotation conversion
 YOLOv8 requires images in a specific annotation format. To transform the annotations from Pascal VOC to YOLOv8 format I uploaded the dataset to [Roboflow](https://roboflow.com/) as Roboflow allows transormation of the annotations to the required format. I also rebalanced the dataset into train/validation/test splits with a 70%/20%/10% split (note these % change after augmenting the test images). I applied three augmentations to the training images which are appriate for aerial imagery: a horizontal flip and 2x rotations. This increased the training set size threefold to approximately 1.4k images. I also resized all images to 640x640 since this is the required size for the YOLOv8m model. This dataset is publicly available [here](https://app.roboflow.com/robin-public/kaggle-ships-in-google-earth-dfqwt/3)
 
@@ -32,7 +31,6 @@ Metrics for the best models, which are in the `models` folder:
 | mAP@.5      | 0.941   | 0.957     |
 | mAP@.5:.95  | 0.683   | 0.720     |
 
-
 Reviewing the predictions on the validation set I observed some errors, particularly for small boats. Overall the results are very encouraging:
 
 <p align="center">
@@ -41,5 +39,13 @@ Reviewing the predictions on the validation set I observed some errors, particul
 
 Reviewing the test predictions (see notebook), in general ships are accurately detected with high confidence but some small and very long ships are missed.
 
-## Summary
+## Training Summary
 With relatively little time and effort I trained a YOLOv8 model for ship detection. For improved results, future work could include experimentation with alternative models, and augmentation strategies could be explored to help balance out some of the variations due to sea conditions (rough or calm), lighting (overcast or bright sunshine), ship density.
+
+## Local inference
+The `inference.ipynb` notebook shows how to inference (process) images on a machine without GPU (I am on Intel Mac).
+
+* `python3 -m venv venv`
+* `source venv/bin/activate`
+* `(venv) $ pip install -r requirements.txt`
+* Using VScode open `inference.ipynb`
