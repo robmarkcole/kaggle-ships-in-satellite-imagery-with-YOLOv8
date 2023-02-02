@@ -1,5 +1,5 @@
 # kaggle-ships-in-Google-Earth
-This project demonstrates the use of [YOLOv8](https://github.com/ultralytics/ultralytics) to perform detection of ships on a Google Earth dataset.
+This project demonstrates the training of [YOLOv8](https://github.com/ultralytics/ultralytics) to perform detection of ships on a Google Earth dataset. Training is performed on a GPU machine but inference is on any CPU machine.
 
 ## Dataset
 The source dataset used is on Kaggle at [Ships in Google Earth](https://www.kaggle.com/tomluther/ships-in-google-earth). This dataset consists of images extracted from Google Earth which are approximately 30 to 50cm resolution. Images generally consist of a range of sizes of ship/boat against the blank ocean background, but some images are captured with ships close to the shoreline or with multiple clustered ships. Each ship is annotated with a bounding box in Pascal VOC (XML) format.
@@ -40,7 +40,7 @@ Reviewing the predictions on the validation set I observed some errors, particul
 Reviewing the test predictions (see notebook), in general ships are accurately detected with high confidence but some small and very long ships are missed.
 
 ## Training Summary
-With relatively little time and effort I trained a YOLOv8 model for ship detection. For improved results, future work could include experimentation with alternative models, and augmentation strategies could be explored to help balance out some of the variations due to sea conditions (rough or calm), lighting (overcast or bright sunshine), ship density.
+With relatively little time and effort I trained a YOLOv8 model for ship detection. For improved results, future work could include experimentation with larger models, and augmentation strategies could be explored to help balance out some of the variations due to sea conditions (rough or calm), lighting (overcast or bright sunshine), ship density. However the training dataset is very small, so simply gathering a larger training dataset would have the largest impact on performance.
 
 ## Local inference
 The `inference.ipynb` notebook shows how to inference (process) images on a machine without GPU (I am on Intel Mac).
